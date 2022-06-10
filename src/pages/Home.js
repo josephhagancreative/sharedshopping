@@ -94,7 +94,7 @@ export default function Home() {
     let members = []
     const docCheckRef = doc(db, "lists", c)
     const docCheck = await getDoc(docCheckRef)
-    docCheck.data().sharedWith.map((member) => {
+    docCheck.data().sharedWith.forEach((member) => {
       members.push(member)
     })
     setListMembers(members)
