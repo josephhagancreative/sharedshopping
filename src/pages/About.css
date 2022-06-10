@@ -1,0 +1,24 @@
+.aboutContainer {
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.aboutText {
+  font-size: 1rem;
+  line-height: 1.8rem;
+}
+
+.signupAbout {
+  background-color: var(--green-d);
+  font-size: 1.2rem;
+  border: none;
+}
+.loginOut.signupAbout:hover {
+  background-color: var(--green-m);
+  color: var(--white) !important;
+  border: none;
+}

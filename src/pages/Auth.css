@@ -1,0 +1,101 @@
+.pageContainer {
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.loginTitle {
+  margin-bottom: 1rem;
+}
+
+.loginForm {
+  flex: 1;
+  margin-bottom: 2rem;
+  border: 2px solid var(--green-d);
+  padding: 1rem 2rem 2rem;
+  border-radius: 1rem;
+  background-color: white;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.authInputContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+}
+
+.authInputContainer input {
+  background-color: var(--white);
+  padding: 0.5rem;
+  border-radius: 1rem;
+  border: 2px solid var(--green-d);
+  width: 100%;
+}
+
+.authTitle {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.emailContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+.passwordContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.5rem;
+  gap: 0.5rem;
+}
+
+.passwordBtn {
+  background-color: var(--white);
+  border: 2px solid var(--green-d);
+  border-radius: 1rem;
+  padding: 8px 10px;
+  color: var(--green-d);
+}
+
+.passwordContainer button svg {
+  margin-top: 2px;
+}
+.passwordContainer button:hover,
+.passwordBtn.show {
+  background-color: var(--green-d);
+  color: var(--white);
+}
+
+.loginButton {
+  background-color: var(--green-d);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  border-radius: 1rem;
+  color: var(--white);
+  border: 2px solid var(--green-d);
+}
+
+.loginButton:hover {
+  background-color: var(--white);
+  padding: 0.5rem;
+  color: var(----green-d);
+}
+
+.signUpLink {
+  font-size: 1.2rem;
+  color: var(--green-d);
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.signUpLink:hover {
+  color: var(--green-l);
+}

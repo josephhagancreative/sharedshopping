@@ -1,0 +1,159 @@
+.todo {
+  margin: 0.5rem;
+  background: var(--white);
+  font-size: 1.5rem;
+  color: var(--black);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  transition: all 250ms ease-out;
+}
+
+.todo:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 3px 8px 12px;
+  transform: scale(1.03);
+}
+
+.todo-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.todo-list {
+  min-width: 30%;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.editForm {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.editWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 0.25rem;
+  width: 100%;
+}
+.editWrapper input {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  padding: 0.5rem;
+  background-color: #f1f1f1;
+  color: var(--black);
+  width: 100%;
+}
+.editWrapper input[type="text"] {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.editWrapper input:focus {
+  outline: 1px solid var(--green-d);
+}
+
+.filter-todo {
+  padding: 1rem;
+}
+.todo li {
+  flex: 1;
+}
+
+.trash-btn,
+.complete-btn {
+  color: var(--white);
+  border: none;
+  padding: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+.complete-btn {
+  background: var(--green-d);
+}
+.complete-btn:hover {
+  background: var(--green-l);
+}
+.edit-btn {
+  background: var(--yellow-d);
+}
+.edit-btn:hover {
+  background: var(--yellow-l);
+}
+.trash-btn {
+  background: var(--red-d);
+}
+.trash-btn:hover {
+  background: var(--red-l);
+}
+
+.todo-item {
+  padding: 0rem 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fa-trash,
+.fa-check {
+  pointer-events: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .todo-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .todo-list {
+    width: 100%;
+    padding: 0rem;
+    gap: 1rem;
+  }
+
+  .todo {
+    margin: 0rem;
+    font-size: 1.2rem;
+    width: 100%;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+
+  .itemButtons {
+    display: flex;
+  }
+
+  .filter-todo {
+    padding: 0.5rem 0.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .todo-item {
+    flex-direction: column;
+    gap: 0.25rem;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+  }
+
+  .quantitySpan {
+    border: none;
+    padding: 0.25rem;
+    padding-top: 0;
+  }
+}
