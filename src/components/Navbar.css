@@ -1,4 +1,4 @@
-.navbarContainer {
+/* .navbarContainer {
   color: var(--white);
   background: var(--green-d);
   padding: 0.5rem 2rem;
@@ -125,5 +125,123 @@
 
   .hide {
     display: none;
+  }
+} */
+
+/* COPYPASTE */
+.navContainer {
+  display: flex;
+  flex-direction: row;
+  background-color: var(--white);
+  color: var(--green-d);
+  padding: 0.5rem 2rem;
+  width: 100%;
+  position: relative;
+}
+.navContent {
+  width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+.logo:hover {
+  color: var(--accent);
+}
+
+.link {
+  font-weight: 700;
+  text-transform: lowercase;
+  letter-spacing: 1px;
+  color: var(--green-d);
+}
+.link:hover {
+  color: var(--accent);
+}
+.linksContainer {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  background-color: var(--white);
+  align-items: center;
+  justify-content: center;
+}
+.MobilelinksContainer {
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 100%;
+}
+
+.icon {
+  font-size: 2rem;
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+}
+
+.icon:hover {
+  color: var(--accent);
+}
+
+.hamburger {
+  display: none;
+}
+
+.linksDropdown {
+  display: none;
+}
+
+@media (max-width: 800px) {
+  .navContainer {
+    padding: 0.5rem 1rem;
+  }
+  .navContent {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .linksContainer {
+    display: none;
+    flex-direction: column;
+  }
+
+  .hamburger {
+    display: block;
+    cursor: pointer;
+    font-size: 1.5rem;
+  }
+
+  .linksDropdown {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+  .mobileLinksContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    /* padding: 1rem; */
+  }
+  .mobileLinksContainer > * {
+    /* background-color: red; */
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .mobileLinksContainer :hover {
+    background-color: var(--green-d);
+    color: var(--white);
   }
 }

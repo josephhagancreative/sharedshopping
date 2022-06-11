@@ -30,7 +30,7 @@ import "./Home.css"
 export default function Home() {
   // Context Items
   const { user } = useAuthContext()
-  // const { items, setItems, isLoading, setIsLoading } = useContext(ItemsContext)
+  const { items, setItems, isLoading, setIsLoading } = useContext(ItemsContext)
 
   // State
   const [inputText, setInputText] = useState("")
@@ -43,7 +43,7 @@ export default function Home() {
   const [listMembers, setListMembers] = useState(null)
   const [currentUser, setCurrentUser] = useState("")
   const [usernames, setUsernames] = useState(null)
-  const [isLoading, setIsLoading] = useState(false)
+  // const [isLoading, setIsLoading] = useState(false)
 
   const { documents } = useCollection(listId)
 
@@ -69,9 +69,9 @@ export default function Home() {
     if (user) {
       getList()
       getUsernameFromId(user.uid)
+      setIsLoading(false)
       if (listId) {
         getListMembers(listId)
-        setIsLoading(false)
       }
     }
   }, [user, listId])
