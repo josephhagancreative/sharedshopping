@@ -2,6 +2,8 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
+import { setDoc, doc } from "firebase/firestore"
+import { db } from "../firebaseConfig"
 
 // comps
 import JoinList from "../components/JoinList"
@@ -9,6 +11,7 @@ import AddList from "../components/AddList"
 
 // style
 import "./Accordion.css"
+import { toast } from "react-toastify"
 
 const Accordion = ({ user, listId, setListId }) => {
   const [clicked, setClicked] = useState(false)
@@ -16,12 +19,26 @@ const Accordion = ({ user, listId, setListId }) => {
     "Click here to copy your User ID!"
   )
 
+  // Functions
+
   const toggle = (index) => {
     if (clicked === index) {
       return setClicked(null)
     }
 
     setClicked(index)
+  }
+
+  const resetList = async () => {
+    try {
+      await setDoc(doc(db, "users", user.uid), {
+        defaultList: user.uid,
+        sharedWith: [user.uid],
+      })
+      toast.success("Reset List")
+    } catch (error) {
+      toast.error(error)
+    }
   }
 
   return (
@@ -97,6 +114,24 @@ const Accordion = ({ user, listId, setListId }) => {
             <div>
               5. Paste your friend's User ID here:
               <JoinList listId={listId} setListId={setListId} user={user} />
+            </div>
+          </div>
+        ) : null}
+        <div className="wrap" onClick={() => toggle(3)}>
+          <p>I want to reset my list and shared friends</p>
+          {clicked === 3 ? (
+            <FontAwesomeIcon icon={faMinus} />
+          ) : (
+            <FontAwesomeIcon icon={faPlus} />
+          )}
+        </div>
+        {clicked === 3 ? (
+          <div className="dropdown">
+            <div>
+              1. click this button
+              <button className="copyBtn" onClick={() => resetList()}>
+                Reset my list
+              </button>
             </div>
           </div>
         ) : null}

@@ -5,7 +5,7 @@
   justify-content: center;
   position: relative;
   width: 100%;
-  max-width: 80%;
+  max-width: 70%;
 }
 
 .accordionContainer {
@@ -56,4 +56,10 @@
 
 .dropdown > div:last-of-type {
   border-bottom: none;
+}
+
+@media only screen and (max-width: 800px) {
+  .accordionSection {
+    max-width: 90%;
+  }
 }
