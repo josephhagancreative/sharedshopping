@@ -20,30 +20,29 @@
   justify-content: center;
 }
 
-.join-friend-box {
-  background-color: rgb(60, 60, 60);
-  padding: 0.5rem;
-  display: flex;
-  flex-direction: column;
-}
-.add-friend-box {
-  background-color: rgb(21, 21, 21);
-  padding: 0.5rem;
-}
-
 .connectList {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  /* align-items: center; */
+  justify-content: center;
   gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.connectList input {
+  border: 1px solid var(--green-d);
+  border-radius: 0.25rem;
 }
 
 .connectBtn {
   border: none;
   padding: 0.5rem;
-  background-color: var(--yellow-d);
-  color: black;
+  border-radius: 0.25rem;
+  background-color: var(--green-d);
+  color: var(--white);
+  font-weight: 700;
 }
 
-.add {
+.connectBtn:hover {
   background-color: var(--green-l);
 }

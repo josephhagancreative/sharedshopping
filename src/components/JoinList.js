@@ -58,7 +58,6 @@ export default function JoinList({ listId, setListId }) {
     <>
       <form onSubmit={handleSubmit}>
         <label className="connectList">
-          <span>Join a friends list</span>
           <input
             required
             type="text"

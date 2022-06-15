@@ -45,10 +45,15 @@ export default function Login() {
 
   return (
     <div className="pageContainer">
-      <header className="loginTitle">Welcome Back!</header>
+      <h2 className="homeTitle">Welcome to Shared Shopping!</h2>
       <main>
         <form onSubmit={handleSubmit} className="loginForm">
           <h3 className="authTitle">Log In</h3>
+
+          <GoogleButton onClick={handleGoogleSignin} />
+          {error && <p>{error}</p>}
+          {googleError && <p>{googleError}</p>}
+          <p className="py1 grey">- or -</p>
           <div className="authInputContainer">
             <div className="emailContainer">
               <label htmlFor="email">Email:</label>
@@ -82,10 +87,6 @@ export default function Login() {
             <button type="submit" className="loginButton">
               Login
             </button>
-            <p className="py1 grey">- or -</p>
-            <GoogleButton onClick={handleGoogleSignin} />
-            {error && <p>{error}</p>}
-            {googleError && <p>{googleError}</p>}
           </div>
         </form>
         <Link to="/signup" className="signUpLink">

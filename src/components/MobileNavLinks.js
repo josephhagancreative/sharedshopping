@@ -9,43 +9,34 @@ function MobileNavLinks({ setShowMenu, signout }) {
     <div
       className="mobileLinksContainer {
 ">
-      <li>
-        <Link to="/" onClick={() => setShowMenu(false)}>
-          Home
-        </Link>
-      </li>
-      <li>
-        <Link to="/about" onClick={() => setShowMenu(false)}>
-          About
-        </Link>
-      </li>
+      <Link to="/" onClick={() => setShowMenu(false)}>
+        <li>Home</li>
+      </Link>
+      <Link to="/about" onClick={() => setShowMenu(false)}>
+        <li>About</li>
+      </Link>
       {user && (
-        <li>
-          <Link to="/connect" onClick={() => setShowMenu(false)}>
-            Connect
-          </Link>
-        </li>
+        <Link to="/connect" onClick={() => setShowMenu(false)}>
+          <li>Connect</li>
+        </Link>
       )}
       {user && (
-        <li>
-          <p onClick={signout} className="loginOut">
-            Logout
-          </p>
-        </li>
+        <p onClick={signout} className="">
+          <li>Logout</li>
+        </p>
       )}
       {!user && (
-        <li>
-          <Link to="/login" className="loginOut">
-            Login
-          </Link>
-        </li>
+        <Link to="/login" onClick={() => setShowMenu(false)} className="">
+          <li>Login</li>
+        </Link>
       )}
       {!user && (
-        <li>
-          <Link to="/signup" className="loginOut signup">
-            Signup
-          </Link>
-        </li>
+        <Link
+          to="/signup"
+          onClick={() => setShowMenu(false)}
+          className=" signup">
+          <li>Signup</li>
+        </Link>
       )}
     </div>
   )

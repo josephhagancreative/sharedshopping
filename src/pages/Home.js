@@ -168,7 +168,9 @@ export default function Home() {
   } else {
     return (
       <div className="homeContainer">
-        {currentUser && <h3>Hi {currentUser}</h3>}
+        {currentUser && (
+          <h3 className="userGreeting">Welcome, {currentUser}</h3>
+        )}
         {usernames && (
           <h2 className="homeTitle">{usernames.join(", ")}'s list</h2>
         )}

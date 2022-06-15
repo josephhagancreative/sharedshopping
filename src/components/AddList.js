@@ -6,20 +6,20 @@ import { doc, updateDoc, arrayUnion } from "firebase/firestore"
 // Hooks
 import { useAuthContext } from "../hooks/useAuthContext"
 
-export default function AddList() {
-  const [listId, setListId] = useState("")
+export default function AddList({ user, listId, setListId }) {
+  const [listIdValue, setListIdValue] = useState("")
   const [message, setMessage] = useState("")
 
-  const { user } = useAuthContext()
+  // const { user } = useAuthContext()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
     try {
       const docRef = doc(db, "lists", user.uid)
       await updateDoc(docRef, {
-        sharedWith: arrayUnion(listId),
+        sharedWith: arrayUnion(listIdValue),
       })
-      setListId("")
+      setListIdValue("")
       setMessage("Successfully Added to Your List")
       setTimeout(() => {
         setMessage("")
@@ -36,12 +36,11 @@ export default function AddList() {
     <>
       <form onSubmit={handleSubmit}>
         <label className="connectList">
-          <span>Add a friend to your list</span>
           <input
             required
             type="text"
-            onChange={(e) => setListId(e.target.value)}
-            value={listId}
+            onChange={(e) => setListIdValue(e.target.value)}
+            value={listIdValue}
           />
           <button className="connectBtn add">Add</button>
         </label>

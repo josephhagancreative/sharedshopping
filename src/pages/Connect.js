@@ -7,12 +7,11 @@ import { db } from "../firebaseConfig"
 import { useAuthContext } from "../hooks/useAuthContext"
 
 // Components
-import JoinList from "../components/JoinList"
-import AddList from "../components/AddList"
 import Spinner from "../components/Spinner"
 
 // Styles
 import "./Connect.css"
+import Accordion from "../components/Accordion"
 
 function Connect() {
   const { user } = useAuthContext()
@@ -37,20 +36,12 @@ function Connect() {
   } else {
     return (
       <div className="connectContainer">
-        <h3>Your user ID is: {user.uid}</h3>
-        <h3>Your current list ID is: {listId}</h3>
+        <h1 className="homeTitle">Connect with a Friend</h1>
         <p>
-          Send it to your friend so they can join your list, or enter your
-          friends User ID below!
+          Select an option below to add a friend to your list, or join someone
+          else's list!
         </p>
-        <div className="friend-box">
-          <div className="join-friend-box">
-            <JoinList listId={listId} setListId={setListId} />
-          </div>
-          <div className="add-friend-box">
-            <AddList />
-          </div>
-        </div>
+        <Accordion user={user} listId={listId} setListId={setListId} />
       </div>
     )
   }

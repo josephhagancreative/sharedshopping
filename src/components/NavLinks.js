@@ -27,21 +27,21 @@ function NavLinks({ setShowMenu, signout }) {
 
       {user && (
         <li>
-          <p onClick={signout} className="loginOut">
+          <p onClick={signout} className="">
             Logout
           </p>
         </li>
       )}
       {!user && (
         <li>
-          <Link to="/login" className="loginOut">
+          <Link to="/login" className="">
             Login
           </Link>
         </li>
       )}
       {!user && (
         <li>
-          <Link to="/signup" className="loginOut signup">
+          <Link to="/signup" className=" signup">
             Signup
           </Link>
         </li>

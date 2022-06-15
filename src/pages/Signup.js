@@ -59,10 +59,15 @@ export default function Signup() {
   return (
     <>
       <div className="pageContainer">
-        <header className="loginTitle">Share Your List Today!</header>
+        <h2 className="homeTitle">Welcome to Shared Shopping!</h2>
         <main>
           <form onSubmit={handleSubmit} className="loginForm">
             <h3 className="authTitle">Sign Up</h3>
+            <GoogleButton onClick={handleGoogleSignin} />
+            {error && <p>{error}</p>}
+            {googleError && <p>{googleError}</p>}
+            <p className="py1 grey">- or -</p>
+
             <div className="authInputContainer">
               <div className="emailContainer">
                 <label htmlFor="name">Username:</label>
@@ -107,10 +112,6 @@ export default function Signup() {
               <button type="submit" className="loginButton">
                 Sign Up
               </button>
-              <p className="py1 grey">- or -</p>
-              <GoogleButton onClick={handleGoogleSignin} />
-              {error && <p>{error}</p>}
-              {googleError && <p>{googleError}</p>}
             </div>
           </form>
           <Link to="/login" className="signUpLink">

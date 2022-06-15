@@ -1,11 +1,10 @@
-/* .navbarContainer {
-  color: var(--white);
+.navbarContainer {
+  /* color: var(--white); */
   background: var(--green-d);
   padding: 0.5rem 2rem;
   border-radius: 0px 0px 1rem 1rem;
   transition: all 1s ease;
 }
-
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -13,40 +12,12 @@
   justify-content: space-between;
   align-items: center;
 }
-
 .logo {
   color: var(--green-d);
-  text-transform: uppercase;
-  font-size: 1.5rem;
-  font-weight: 500;
-  line-height: 1rem;
-  letter-spacing: 3px;
-  padding: 0.5rem 1rem;
-  background-color: var(--white);
-  border-radius: 50px;
-}
-.links {
-  display: flex;
-  gap: 1rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.gap {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.links li a:hover {
-  color: var(--green-l);
 }
 
 .loginOut {
-  background: transparent;
+  background: var(--green-d);
   color: var(--white);
   border: 1.5px solid var(--white);
   border-radius: 1rem;
@@ -55,84 +26,16 @@
 .loginOut:hover {
   background: var(--white);
   border: 1.5px solid var(--green-d);
-  color: var(--green-d) !important;
+  color: var(--green-d);
   border-radius: 1rem;
   padding: 0.5rem 1rem;
 }
-
-.signup {
-  background-color: var(--white);
-  color: var(--green-d);
-}
-
-.signup:hover {
-  background-color: var(--green-d);
-  color: var(--white) !important;
-  border: 1.5px solid var(--white);
-}
-
-.mobileNavButton {
-  display: none;
-  cursor: pointer;
-}
-
-@media only screen and (max-width: 600px) {
-  .navbarContainer {
-    padding: 0.5rem 2rem;
-    border-radius: 0px 0px 1rem 1rem;
-  }
-
-  .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    display: flex;
-    gap: 0.5rem;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .logo {
-    text-transform: uppercase;
-    font-size: 1.3rem;
-    font-weight: 300;
-    line-height: 1rem;
-    letter-spacing: 3px;
-    padding: 0.5rem 1rem;
-    border-radius: 50px;
-  }
-  .links {
-    display: flex;
-    gap: 1rem;
-    text-transform: uppercase;
-    font-size: 0.9rem;
-    padding: 0.5rem 0;
-  }
-
-  .logoContainer {
-    display: flex;
-    gap: 1rem;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .mobileNavButton {
-    display: inline-block;
-  }
-  .mobileNavButton:hover {
-    opacity: 0.8;
-  }
-
-  .hide {
-    display: none;
-  }
-} */
 
 /* COPYPASTE */
 .navContainer {
   display: flex;
   flex-direction: row;
-  background-color: var(--white);
+  /* background-color: var(--white); */
   color: var(--green-d);
   padding: 0.5rem 2rem;
   width: 100%;
@@ -232,6 +135,7 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    /* background-color: var(--white); */
     /* padding: 1rem; */
   }
   .mobileLinksContainer > * {

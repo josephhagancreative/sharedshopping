@@ -9,14 +9,15 @@
   padding-bottom: 4rem;
 }
 
+.userGreeting {
+  font-size: 1rem;
+  color: var(--grey);
+}
+
 .homeTitle {
-  font-size: 1.5rem;
+  font-size: 3rem;
   font-family: "Poppins", sans-serif;
   font-weight: 700;
-  background-color: var(--white);
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 .deleteBought {
@@ -43,7 +44,7 @@
   transform: scale(1.03);
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
   .homeContainer {
     gap: 1rem;
     align-items: center;
@@ -53,8 +54,8 @@
     padding: 1rem;
   }
 
-  .homeContainer h1 {
-    font-size: 1.3rem;
+  .homeTitle {
+    font-size: 2rem;
   }
 
   .deleteBought {

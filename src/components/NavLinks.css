@@ -14,6 +14,10 @@
   gap: 1rem;
 }
 
+.linksContainer li :hover {
+  color: var(--red-l);
+}
+
 @media (max-width: 800px) {
   .linksContainer {
     display: flex;
@@ -36,40 +40,3 @@
     color: var(--white);
   }
 }
-
-/* COPY PASTE */
-/* .link {
-  font-weight: 700;
-  text-transform: lowercase;
-  letter-spacing: 1px;
-  color: var(--primary);
-}
-.link:hover {
-  color: var(--accent);
-}
-.linksContainer {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  background-color: var(--white);
-  align-items: center;
-  justify-content: center;
-}
-
-.icon {
-  font-size: 2rem;
-  position: absolute;
-  right: 2rem;
-  cursor: pointer;
-}
-
-@media (max-width: 990px) {
-  .linksContainer {
-    display: flex;
-    flex-direction: column;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-  }
-} */

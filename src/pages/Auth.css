@@ -6,13 +6,12 @@
   flex-direction: column;
 }
 
-.loginTitle {
-  margin-bottom: 1rem;
-}
-
 .loginForm {
-  flex: 1;
-  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
   border: 2px solid var(--green-d);
   padding: 1rem 2rem 2rem;
   border-radius: 1rem;
@@ -24,14 +23,15 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  align-items: center;
+  align-items: stretch;
+  /* justify-content: start; */
   width: 100%;
 }
 
 .authInputContainer input {
   background-color: var(--white);
   padding: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   border: 2px solid var(--green-d);
   width: 100%;
 }
@@ -39,6 +39,7 @@
 .authTitle {
   text-align: center;
   margin-bottom: 1rem;
+  font-size: 1.5rem;
 }
 
 .emailContainer {
@@ -60,7 +61,7 @@
 .passwordBtn {
   background-color: var(--white);
   border: 2px solid var(--green-d);
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   padding: 8px 10px;
   color: var(--green-d);
 }
@@ -78,7 +79,7 @@
   background-color: var(--green-d);
   padding: 0.5rem;
   font-size: 1.2rem;
-  border-radius: 1rem;
+  border-radius: 0.25rem;
   color: var(--white);
   border: 2px solid var(--green-d);
 }

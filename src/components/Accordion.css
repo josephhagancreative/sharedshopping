@@ -1,0 +1,59 @@
+.accordionSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+  max-width: 80%;
+}
+
+.accordionContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: var(--white);
+  border: 1px solid var(--green-d);
+}
+
+.wrap {
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--green-d);
+  color: var(--white);
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+  padding: 1rem;
+  border-bottom: 1px solid var(--green-d);
+  margin-bottom: 0.5rem;
+}
+
+.wrap:last-of-type {
+  margin-bottom: 0;
+}
+
+.copyBtn {
+  background: none;
+  background-color: var(--green-d);
+  font-weight: 700;
+  color: var(--white);
+  border: 1px solid var(--green-d);
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  margin-left: 1rem;
+}
+
+.copyBtn:hover {
+  background-color: var(--green-l);
+}
+
+.dropdown > div {
+  padding: 1rem;
+  color: var(--grey);
+  border-bottom: 1px dotted var(--grey);
+}
+
+.dropdown > div:last-of-type {
+  border-bottom: none;
+}

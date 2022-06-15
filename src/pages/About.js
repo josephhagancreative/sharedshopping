@@ -8,9 +8,9 @@ export default function About() {
       <p className="aboutText">
         Welcome to Shared Shopping, the shopping list app you can share!
       </p>
-      <p className="aboutText">...sharing coming soon...</p>
       <p className="aboutText">
-        for now it's just a really nice shopping list app!
+        By sending your code to your friends and family you can share your
+        shopping lists in real time!
       </p>
       <Link to="/signup" className="loginOut signupAbout">
         Sign Up Today
