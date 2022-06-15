@@ -1,7 +1,9 @@
-import "./NavLinks.css"
-
+// Dependencies
 import { Link } from "react-router-dom"
 import { useAuthContext } from "../hooks/useAuthContext"
+
+// Style
+import "./NavLinks.css"
 
 function NavLinks({ setShowMenu, signout }) {
   const { user } = useAuthContext()

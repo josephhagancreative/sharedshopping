@@ -12,7 +12,7 @@ export default function About() {
         By sending your code to your friends and family you can share your
         shopping lists in real time!
       </p>
-      <Link to="/signup" className="loginOut signupAbout">
+      <Link to="/signup" className="loginButton">
         Sign Up Today
       </Link>
     </div>

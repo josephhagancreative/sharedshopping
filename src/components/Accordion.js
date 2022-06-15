@@ -2,7 +2,7 @@
 import { useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
-import { setDoc, doc } from "firebase/firestore"
+import { setDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "../firebaseConfig"
 
 // comps
@@ -31,8 +31,10 @@ const Accordion = ({ user, listId, setListId }) => {
 
   const resetList = async () => {
     try {
-      await setDoc(doc(db, "users", user.uid), {
+      await updateDoc(doc(db, "users", user.uid), {
         defaultList: user.uid,
+      })
+      await updateDoc(doc(db, "lists", user.uid), {
         sharedWith: [user.uid],
       })
       toast.success("Reset List")

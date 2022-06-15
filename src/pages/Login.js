@@ -4,6 +4,7 @@ import { Link, useNavigate } from "react-router-dom"
 import { GoogleButton } from "react-google-button"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye } from "@fortawesome/free-solid-svg-icons"
+import { toast } from "react-toastify"
 
 // Hooks
 import { useLogin } from "../hooks/useLogin"
@@ -32,9 +33,9 @@ export default function Login() {
       await loginWithGoogle()
       setTimeout(() => {
         navigate("/")
-      }, 500)
+      }, 1)
     } catch (error) {
-      console.log(error)
+      toast.error(error)
     }
   }
 

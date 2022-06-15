@@ -6,6 +6,7 @@ import ItemsContext from "../context/ItemsContext"
 
 // Components
 import Item from "./Todo"
+import Spinner from "./Spinner"
 
 // Styles
 import "./TodoList.css"
@@ -55,9 +56,5 @@ export default function TodoList({
     )
   }
 
-  return (
-    <>
-      <h1>TodoList</h1>
-    </>
-  )
+  return <Spinner />
 }

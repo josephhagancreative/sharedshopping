@@ -64,7 +64,7 @@ export default function Form({
           />
           <input
             onChange={inputQuantityHandler}
-            type="text"
+            type="number"
             className="todo-input"
             value={inputQuantity}
             placeholder="Quantity"

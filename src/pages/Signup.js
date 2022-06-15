@@ -4,6 +4,7 @@ import { useNavigate } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faEye } from "@fortawesome/free-solid-svg-icons"
 import { GoogleButton } from "react-google-button"
+import { toast } from "react-toastify"
 
 // Hooks
 import { useSignup } from "../hooks/useSignup"
@@ -30,9 +31,9 @@ export default function Signup() {
       await loginWithGoogle()
       setTimeout(() => {
         navigate("/")
-      }, 500)
+      }, 1)
     } catch (error) {
-      console.log(error)
+      toast.error(error)
     }
   }
 
@@ -45,9 +46,9 @@ export default function Signup() {
       setUsername("")
       setTimeout(() => {
         navigate("/")
-      }, 2000)
+      }, 1000)
     } catch (error) {
-      console.log(error)
+      toast.error(error)
     }
   }
 
