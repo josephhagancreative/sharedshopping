@@ -1,6 +1,4 @@
 .navbarContainer {
-  /* color: var(--white); */
-  background: var(--green-d);
   padding: 0.5rem 2rem;
   border-radius: 0px 0px 1rem 1rem;
   transition: all 1s ease;
@@ -35,7 +33,7 @@
 .navContainer {
   display: flex;
   flex-direction: row;
-  /* background-color: var(--white); */
+  background-color: var(--white);
   color: var(--green-d);
   padding: 1rem 2rem;
   width: 100%;

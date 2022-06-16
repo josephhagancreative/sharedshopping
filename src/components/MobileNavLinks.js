@@ -16,8 +16,8 @@ function MobileNavLinks({ setShowMenu, signout }) {
         <li>About</li>
       </Link>
       {user && (
-        <Link to="/connect" onClick={() => setShowMenu(false)}>
-          <li>Connect</li>
+        <Link to="/settings" onClick={() => setShowMenu(false)}>
+          <li>Settings</li>
         </Link>
       )}
       {user && (

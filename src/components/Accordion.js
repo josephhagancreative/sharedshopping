@@ -15,6 +15,7 @@ import { toast } from "react-toastify"
 
 const Accordion = ({ user, listId, setListId }) => {
   const [clicked, setClicked] = useState(false)
+  const [newUsername, setNewUsername] = useState("")
   const [buttonText, setButtonText] = useState(
     "Click here to copy your User ID!"
   )
@@ -38,6 +39,20 @@ const Accordion = ({ user, listId, setListId }) => {
         sharedWith: [user.uid],
       })
       toast.success("Reset List")
+    } catch (error) {
+      toast.error(error)
+    }
+  }
+
+  const updateUsername = async (e) => {
+    e.preventDefault()
+    console.log(newUsername)
+    try {
+      await updateDoc(doc(db, "users", user.uid), {
+        username: newUsername,
+      })
+      setNewUsername("")
+      toast.success("Username updated")
     } catch (error) {
       toast.error(error)
     }
@@ -134,6 +149,35 @@ const Accordion = ({ user, listId, setListId }) => {
               <button className="copyBtn" onClick={() => resetList()}>
                 Reset my list
               </button>
+            </div>
+          </div>
+        ) : null}
+        <div className="wrap" onClick={() => toggle(4)}>
+          <p>I want to change my username</p>
+          {clicked === 4 ? (
+            <FontAwesomeIcon icon={faMinus} />
+          ) : (
+            <FontAwesomeIcon icon={faPlus} />
+          )}
+        </div>
+        {clicked === 4 ? (
+          <div className="dropdown">
+            <div>
+              1. Enter new username and click "change"
+              {/* <form onSubmit={(e) => updateUsername}> */}
+              <form onSubmit={updateUsername}>
+                <label className="connectList">
+                  <input
+                    required
+                    type="text"
+                    onChange={(e) => setNewUsername(e.target.value)}
+                    value={newUsername}
+                  />
+                  <button className="connectBtn add" type="submit">
+                    Change
+                  </button>
+                </label>
+              </form>
             </div>
           </div>
         ) : null}

@@ -21,8 +21,8 @@ function NavLinks({ setShowMenu, signout }) {
       </li>
       {user && (
         <li>
-          <Link to="/connect" onClick={() => setShowMenu(false)}>
-            Connect
+          <Link to="/settings" onClick={() => setShowMenu(false)}>
+            Settings
           </Link>
         </li>
       )}

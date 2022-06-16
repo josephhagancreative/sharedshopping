@@ -36,7 +36,7 @@ function App() {
               {!user && <Route path="/signup" element={<Signup />} />}
               {user && <Route path="/signup" element={<Navigate to="/" />} />}
               <Route path="*" element={<NotFound />} />
-              {user && <Route path="/connect" element={<Connect />} />}
+              {user && <Route path="/settings" element={<Connect />} />}
               {!user && (
                 <Route path="/connect" element={<Navigate to="/login" />} />
               )}
