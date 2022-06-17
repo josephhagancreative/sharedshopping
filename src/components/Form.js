@@ -29,16 +29,20 @@ export default function Form({
   const submitItemHandler = async (e) => {
     e.preventDefault()
     if (inputText.length > 0) {
-      const todoToAdd = {
-        text: inputText,
-        quantity: inputQuantity,
-        priority: inputPriority,
-        isComplete: false,
-        timestamp: serverTimestamp(),
+      try {
+        const todoToAdd = {
+          text: inputText,
+          quantity: inputQuantity,
+          priority: inputPriority,
+          isComplete: false,
+          timestamp: serverTimestamp(),
+        }
+        await addDoc(collection(db, "lists", listId, "list"), todoToAdd)
+        setInputText("")
+        setInputQuantity("")
+      } catch (error) {
+        toast.error("Unable to add item, check list settings")
       }
-      await addDoc(collection(db, "lists", listId, "list"), todoToAdd)
-      setInputText("")
-      setInputQuantity("")
     } else {
       toast.error("Please enter an item!", {
         position: "top-center",

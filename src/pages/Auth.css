@@ -78,7 +78,7 @@
 .loginButton {
   background-color: var(--green-d);
   padding: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1rem;
   border-radius: 0.25rem;
   color: var(--white);
   border: 2px solid var(--green-d);

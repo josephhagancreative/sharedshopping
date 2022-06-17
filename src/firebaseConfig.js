@@ -3,13 +3,14 @@ import { getFirestore } from "firebase/firestore"
 import { getAuth } from "firebase/auth"
 
 // Your web app's Firebase configuration
+
 const firebaseConfig = {
-  apiKey: "AIzaSyCxEQMfhShuwm5HpJyzMbdVtdiYtRsavAU",
-  authDomain: "milestone-164c8.firebaseapp.com",
-  projectId: "milestone-164c8",
-  storageBucket: "milestone-164c8.appspot.com",
-  messagingSenderId: "521945920371",
-  appId: "1:521945920371:web:0b730dbd1f162cb6dc4b06",
+  apiKey: "AIzaSyBysFHCq9AGdK0HlEhoUOrYlJn3IPl3FfY",
+  authDomain: "shared-shopping-ade7e.firebaseapp.com",
+  projectId: "shared-shopping-ade7e",
+  storageBucket: "shared-shopping-ade7e.appspot.com",
+  messagingSenderId: "939128525763",
+  appId: "1:939128525763:web:ba617a8d48b36c4e01a376",
 }
 
 // Initialize Firebase

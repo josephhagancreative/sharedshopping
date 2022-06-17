@@ -25,6 +25,7 @@ export default function JoinList({ listId, setListId }) {
             setListId(friendListId)
             setFriendListId("")
             toast.success("Joined Successfully")
+            return
           } else {
             setFriendListId("")
             toast.error("Unauthorized list ID")

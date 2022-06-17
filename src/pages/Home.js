@@ -11,6 +11,7 @@ import {
   deleteDoc,
   updateDoc,
 } from "firebase/firestore"
+import { toast } from "react-toastify"
 
 // Hooks
 import { useCollection } from "../hooks/useCollection"
@@ -26,6 +27,7 @@ import Spinner from "../components/Spinner"
 
 // Styles
 import "./Home.css"
+import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers"
 
 export default function Home() {
   // Context Items
@@ -84,20 +86,28 @@ export default function Home() {
 
   // get list Id
   const getList = async () => {
-    const docRef = doc(db, "users", user.uid)
-    const docSnap = await getDoc(docRef)
-    setListId(docSnap.data().defaultList)
+    try {
+      const docRef = doc(db, "users", user.uid)
+      const docSnap = await getDoc(docRef)
+      setListId(docSnap.data().defaultList)
+    } catch (error) {
+      toast.error("Unable to get list")
+    }
   }
 
   // get list members
   const getListMembers = async (c) => {
     let members = []
-    const docCheckRef = doc(db, "lists", c)
-    const docCheck = await getDoc(docCheckRef)
-    docCheck.data().sharedWith.forEach((member) => {
-      members.push(member)
-    })
-    setListMembers(members)
+    try {
+      const docCheckRef = doc(db, "lists", c)
+      const docCheck = await getDoc(docCheckRef)
+      docCheck.data().sharedWith.forEach((member) => {
+        members.push(member)
+      })
+      setListMembers(members)
+    } catch (error) {
+      toast.error("Unable to get members")
+    }
   }
 
   // Get username from ID

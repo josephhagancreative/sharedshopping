@@ -38,7 +38,7 @@
 .navContainer {
   display: flex;
   flex-direction: row;
-  background-color: var(--white);
+  background-color: rgba(254, 254, 254, 0.7);
   color: var(--green-d);
   padding: 1rem 2rem;
   width: 100%;
