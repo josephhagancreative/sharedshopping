@@ -11,7 +11,12 @@
   align-items: center;
 }
 .logo {
+  font-family: "Rubik", sans-serif;
   color: var(--green-d);
+  letter-spacing: 2px;
+}
+.logo:hover {
+  color: var(--red-l);
 }
 
 .loginOut {
@@ -48,14 +53,6 @@
   align-items: center;
 }
 
-.logo {
-  font-weight: bold;
-  letter-spacing: 3px;
-}
-.logo:hover {
-  color: var(--accent);
-}
-
 .link {
   font-weight: 700;
   text-transform: lowercase;
@@ -63,7 +60,7 @@
   color: var(--green-d);
 }
 .link:hover {
-  color: var(--accent);
+  color: var(--red-l);
 }
 .linksContainer {
   display: flex;

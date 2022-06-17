@@ -114,26 +114,27 @@ export default function Home() {
 
   // Create list title
   const getUsernames = async (members) => {
-    let fetchedUsernames = []
     if (members) {
-      await Promise.all(
-        members.map(async (member) => {
-          try {
-            const q = query(
-              collection(db, "users"),
-              where("owner", "==", member)
+      const getUsernameFromId = () => {
+        if (members.length > 0) {
+          let fetchedUsernames = []
+          async function main() {
+            await Promise.all(
+              members.map(async (member) => {
+                const docRef = doc(db, "users", member)
+                const docSnap = await getDoc(docRef)
+                const convertedUsername = docSnap.data().username
+
+                fetchedUsernames.push(convertedUsername)
+              })
             )
-            const querySnapshot = await getDocs(q)
-            querySnapshot.forEach((doc) => {
-              fetchedUsernames.push(doc.data().username)
-            })
-          } catch (error) {
-            console.log(error)
+            setUsernames(fetchedUsernames)
           }
-        })
-      )
+          main()
+        }
+      }
+      getUsernameFromId()
     }
-    setUsernames(fetchedUsernames)
   }
 
   // Delete Single Item

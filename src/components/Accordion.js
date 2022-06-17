@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faPlus, faMinus } from "@fortawesome/free-solid-svg-icons"
 import { setDoc, doc, updateDoc } from "firebase/firestore"
 import { db } from "../firebaseConfig"
+import { toast } from "react-toastify"
 
 // comps
 import JoinList from "../components/JoinList"
@@ -11,7 +12,7 @@ import AddList from "../components/AddList"
 
 // style
 import "./Accordion.css"
-import { toast } from "react-toastify"
+import SharedUsersList from "./SharedUsersList"
 
 const Accordion = ({ user, listId, setListId }) => {
   const [clicked, setClicked] = useState(false)
@@ -71,13 +72,16 @@ const Accordion = ({ user, listId, setListId }) => {
         </div>
         {clicked === 1 ? (
           <div className="dropdown">
-            <div>1. Ask your friend to send you their user ID</div>
             <div>
-              2. paste their User ID here:
+              <span className="numeral"> 1.</span>Ask your friend to send you
+              their user ID
+            </div>
+            <div>
+              <span className="numeral"> 2.</span>Paste their User ID here:
               <AddList listId={listId} setListId={setListId} user={user} />
             </div>
             <div>
-              3. Copy your User ID
+              <span className="numeral"> 3.</span>Copy your User ID
               <button
                 className="copyBtn"
                 onClick={() => {
@@ -91,8 +95,8 @@ const Accordion = ({ user, listId, setListId }) => {
               </button>
             </div>
             <div>
-              4. Send it to your friend and tell them to click "I want to join
-              someone's list"{" "}
+              <span className="numeral"> 4.</span>Send it to your friend and
+              tell them to click "I want to join someone's list"{" "}
             </div>
           </div>
         ) : null}
@@ -111,7 +115,8 @@ const Accordion = ({ user, listId, setListId }) => {
         {clicked === 2 ? (
           <div className="dropdown">
             <div>
-              1. Copy your User ID
+              <span className="numeral"> 1.</span>
+              Copy your User ID
               <button
                 className="copyBtn"
                 onClick={() => {
@@ -125,11 +130,20 @@ const Accordion = ({ user, listId, setListId }) => {
               </button>
             </div>
 
-            <div>2. Send it to your friend </div>
-            <div>3. Ask your friend to add you to their list </div>
-            <div>4. Ask your friend to send you their User ID</div>
             <div>
-              5. Paste your friend's User ID here:
+              <span className="numeral">2.</span>Send it to your friend
+            </div>
+            <div>
+              <span className="numeral"> 3.</span>Ask your friend to add you to
+              their list{" "}
+            </div>
+            <div>
+              <span className="numeral"> 4.</span>Ask your friend to send you
+              their User ID
+            </div>
+            <div>
+              <span className="numeral"> 5.</span>Paste your friend's User ID
+              here:
               <JoinList listId={listId} setListId={setListId} user={user} />
             </div>
           </div>
@@ -145,7 +159,7 @@ const Accordion = ({ user, listId, setListId }) => {
         {clicked === 3 ? (
           <div className="dropdown">
             <div>
-              1. click this button
+              Click this button
               <button className="copyBtn" onClick={() => resetList()}>
                 Reset my list
               </button>
@@ -153,7 +167,7 @@ const Accordion = ({ user, listId, setListId }) => {
           </div>
         ) : null}
         <div className="wrap" onClick={() => toggle(4)}>
-          <p>I want to change my username</p>
+          <p>I want to remove someone from my list</p>
           {clicked === 4 ? (
             <FontAwesomeIcon icon={faMinus} />
           ) : (
@@ -163,8 +177,23 @@ const Accordion = ({ user, listId, setListId }) => {
         {clicked === 4 ? (
           <div className="dropdown">
             <div>
-              1. Enter new username and click "change"
-              {/* <form onSubmit={(e) => updateUsername}> */}
+              Click the cross next to the user you want to remove
+              <SharedUsersList userId={user.uid} listId={listId} />
+            </div>
+          </div>
+        ) : null}
+        <div className="wrap" onClick={() => toggle(5)}>
+          <p>I want to change my username</p>
+          {clicked === 5 ? (
+            <FontAwesomeIcon icon={faMinus} />
+          ) : (
+            <FontAwesomeIcon icon={faPlus} />
+          )}
+        </div>
+        {clicked === 5 ? (
+          <div className="dropdown">
+            <div>
+              Enter new username and click "Change"
               <form onSubmit={updateUsername}>
                 <label className="connectList">
                   <input

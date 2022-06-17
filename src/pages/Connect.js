@@ -36,10 +36,10 @@ function Connect() {
   } else {
     return (
       <div className="connectContainer">
-        <h1 className="homeTitle">Connect with a Friend</h1>
+        <h1 className="homeTitle">User Settings</h1>
         <p>
-          Select an option below to add a friend to your list, or join someone
-          else's list!
+          Select an option below to add a friend to your list, join someone
+          else's list, and update your username!
         </p>
         <Accordion user={user} listId={listId} setListId={setListId} />
       </div>

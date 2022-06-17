@@ -16,6 +16,13 @@
   border: 1px solid var(--green-d);
 }
 
+.numeral {
+  color: var(--grey);
+  font-size: 0.8rem;
+  margin-right: 0.5rem;
+  font-weight: 700;
+}
+
 .wrap {
   display: flex;
   justify-content: space-between;
@@ -56,6 +63,34 @@
 
 .dropdown > div:last-of-type {
   border-bottom: none;
+}
+
+.sharedMember {
+  font-size: 1.2rem;
+  font-weight: 500;
+  background-color: rgb(215, 215, 215);
+  color: var(--black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  width: fit-content;
+}
+
+.removeBtn {
+  background: none;
+  border: none;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  background-color: var(--red-d);
+  color: var(--white);
+  margin-left: 1rem;
+}
+
+.removeBtn:hover {
+  background-color: var(--red-l);
 }
 
 @media only screen and (max-width: 800px) {
