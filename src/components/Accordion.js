@@ -96,7 +96,7 @@ const Accordion = ({ user, listId, setListId }) => {
             </div>
             <div>
               <span className="numeral"> 4.</span>Send it to your friend and
-              tell them to click "I want to join someone's list"{" "}
+              tell them to click "I want to join someone's list" (step 5.)
             </div>
           </div>
         ) : null}

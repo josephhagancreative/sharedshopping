@@ -27,7 +27,6 @@ import Spinner from "../components/Spinner"
 
 // Styles
 import "./Home.css"
-import { toHaveStyle } from "@testing-library/jest-dom/dist/matchers"
 
 export default function Home() {
   // Context Items

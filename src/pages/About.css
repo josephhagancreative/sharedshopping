@@ -9,11 +9,31 @@
   margin: 0 auto;
 }
 
+.aboutHeader {
+  font-size: 1.1rem;
+  line-height: 1.1;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+
+.textcontainer {
+  display: flex;
+  gap: 1rem;
+}
+
 .aboutText {
   font-size: 1rem;
   line-height: 1.8rem;
-  margin-top: 1rem;
+  margin-top: 0;
+  margin-bottom: 3rem;
 }
+
+.lg {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
 .signupAbout {
   background-color: var(--green-d);
   font-size: 1.2rem;
