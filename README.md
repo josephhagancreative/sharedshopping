@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+## Shared Shopping Website
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please view the live version of the website here: [Shared Shopping Website](https://shared-shopping.com/)
 
-## Available Scripts
+### Introduction
 
-In the project directory, you can run:
+I originally created this as a to-do list app, but wanting to expand on it and solve a problem in my life (albeit it a small problem of not knowing what my girlfriend needs from the supermarket) i slowly turned it into a shopping list app that you can share with anyone and update in real time.
 
-### `npm start`
+### Technologies
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+This website was created using ReactJS and uses Google's firebase for authentication and storing data. Using snapshots I can update data in real time even when open on multiple devices - there are security rules in place to limit who can access what data.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Features
 
-### `npm test`
+Shared shopping allows people to:
+- sign up for an account with email and password, or one click log in with Google
+- create a list which can be accessed from any browser
+- edit, check off and delete all items on the list
+- share the list with someone through sending ID codes
+- edit or check off items other people in your list have added
+- remove people from your list, or return to your default list
+- change your username
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+### Development
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I initially started this project at the start of 2022, but then put it on hold for a few months to learn new things. When going back to the project I couldn't remember exactly how I set it up, so I should make better use of comments in the future. Using React feels very natural now, but there are many things that I should have implemented earlier on, meaning there is some unused/commented out code which needs to be cleaned up. However for now the site is fully functional but there are many under-the-hood issues that I want to fix/improve.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Features to add
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+1. Things to fix
+   - check who has access rights in securities rules, get an error on some pages
+   -either use items context or don't, clean up the code
+2. Things to add
+  - add option on the login page to reset forgotten password, as currently no option
+  - try and find a work around for accessing the website for social media broswers as this doesnt allow google sign in
+  - sort list via urgency
