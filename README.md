@@ -1,6 +1,6 @@
 ## Shared Shopping Website
 
-Please view the live version of the website here: [Shared Shopping Website](https://shared-shopping.com/)
+Please view the live version of the website here: [Shared Shopping Website](https://shared-shopping-ade7e.web.app/)
 
 ### Introduction
 
